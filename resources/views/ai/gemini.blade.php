@@ -118,7 +118,7 @@
             <div class="spinner-grow spinner-grow-sm text-primary" role="status">
                 <span class="visually-hidden">Memuat...</span>
             </div>
-            Gemini sedang mengetik...
+            Gemini sedang berfikir...
         </div>
 
         <div id="voice-status" class="text-muted">
