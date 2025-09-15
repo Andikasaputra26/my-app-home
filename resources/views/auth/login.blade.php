@@ -58,7 +58,7 @@
                                                     <div class="input-wrap">
                                                         <div class="flex-two">
                                                             <label>Your password</label>
-                                                            <a href="#" class="mb-15">Forgot Password?</a>
+                                                            <a href="{{ route('password.request') }}" class="mb-15">Forgot Password?</a>
                                                         </div>
                                                         <input type="password" name="password" placeholder="Enter your password*">
                                                             @error('password')

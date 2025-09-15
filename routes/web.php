@@ -25,6 +25,24 @@ Route::post("/register", [AuthController::class, "store"])->name("register.store
 Route::get("/login", [AuthController::class, "login"])->name("login");
 Route::post("/login", [AuthController::class, "authenticate"])->name("login.authenticate");
 
+
+Route::get('/forgot-password', [App\Http\Controllers\Auth\PasswordResetLinkController::class, 'create'])
+    ->middleware('guest')
+    ->name('password.request');
+
+Route::post('/forgot-password', [App\Http\Controllers\Auth\PasswordResetLinkController::class, 'store'])
+    ->middleware('guest')
+    ->name('password.email');
+
+// Rute untuk Atur Ulang Kata Sandi
+Route::get('/reset-password/{token}', [App\Http\Controllers\Auth\NewPasswordController::class, 'create'])
+    ->middleware('guest')
+    ->name('password.reset');
+
+Route::post('/reset-password', [App\Http\Controllers\Auth\NewPasswordController::class, 'store'])
+    ->middleware('guest')
+    ->name('password.update');
+    
 Route::get('/', function () {
     return view('welcome');
 });
