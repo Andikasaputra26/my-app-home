@@ -44,4 +44,6 @@ class GeminiAIService
             return ['error' => 'Terjadi kesalahan: ' . $e->getMessage()];
         }
     }
+
+    
 }

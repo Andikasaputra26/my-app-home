@@ -26,9 +26,10 @@ class JikanService
         try {
             $response = $this->httpClient->get("{$this->apiUrl}{$animeId}/full");
             $data = json_decode($response->getBody(), true);
+
+            // Jikan API bungkus di "data"
             return $data['data'] ?? [];
         } catch (\Exception $e) {
-            // Catat atau tangani kesalahan API.
             return ['error' => 'Tidak dapat mengambil data anime: ' . $e->getMessage()];
         }
     }

@@ -18,6 +18,7 @@ use App\Http\Controllers\Auth\AuthController;
 Route::middleware('auth')->group(function () {
     Route::get('/gemini', [GeminiController::class, 'index'])->name('ai.gemini');
     Route::post('/gemini/generate', [GeminiController::class, 'generate'])->name('ai.gemini.generate');
+    Route::post('/gemini/rgb', [GeminiController::class, 'rgb'])->name('ai.gemini.rgb');
 });
 
 Route::get("/register", [AuthController::class, "register"])->name("register");
